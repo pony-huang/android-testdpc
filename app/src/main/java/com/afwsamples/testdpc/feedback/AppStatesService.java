@@ -102,7 +102,7 @@ public class AppStatesService extends KeyedAppStatesService {
                     + ")"
                     + (requestSync ? "\nSYNC REQUESTED" : ""));
     NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-    notificationManager.notify(getIdForState(state), notificationBuilder.build());
+//    notificationManager.notify(getIdForState(state), notificationBuilder.build());
   }
 
   private void createNotificationChannel() {
