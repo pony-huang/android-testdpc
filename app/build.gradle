@@ -46,10 +46,16 @@ android {
         compose true
         aidl true
     }
+
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.aar'])
+//    implementation project(path: ':setupdesign')
+//    implementation project(path: ':setupcompat')
     implementation libs.androidx.annotation
     implementation libs.androidx.appcompat
     implementation libs.androidx.appcompat.resources

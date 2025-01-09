@@ -20,4 +20,9 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "testdpc"
+
 include ':app'
+//include ':setupdesign'
+//project(':setupdesign')
+//include ':setupcompat'
+//project(':setupcompat')
