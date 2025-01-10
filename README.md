@@ -1,102 +1,37 @@
-Test Device Policy Control (Test DPC) App
-=========================================
+### Test Device Policy Control (Test DPC) App
 
-Test DPC is an app designed to help EMMs, ISVs, and OEMs to test their applications and platforms in a Android enterprise managed profile (i.e. work profile). It serves as both a sample Device Policy Controller and a testing application to flex the APIs available for Android enterprise. It supports devices running Android 5.0 Lollipop or later.
+#### 简介
+Test DPC 是一个应用程序，旨在帮助 EMM、ISV 和 OEM 测试其应用程序和平台在 Android 企业托管配置文件（即工作配置文件）中的表现。它既是一个示例设备策略控制器，也是一个测试应用程序，用于测试 Android 企业可用的 API。支持运行 Android 5.0 Lollipop 或更高版本的设备。
 
-See the [documentation](https://developer.android.com/work/index.html) to learn more about Android in the enterprise.
+更多关于 Android 企业应用的信息，请参阅[官方文档](https://developer.android.com/work/index.html)。
 
-Getting Started
----------------
+#### 入门指南
+- 原项目使用 Bazel 构建系统, 先项目改为 Gradle 构建系统。
+- 构建命令：`./gradlew build -x test -x lint`
 
-This sample uses the Bazel build system. To build this project, use the "bazel build testdpc" command.
+#### 配置方法
+提供了几种不同的配置方法，例如：
+- **QR 码配置（仅限设备所有者 N+）**：通过扫描 QR 码完成配置。
+- **ADB 命令**：
+    - **设备所有者**：`adb shell dpm set-device-owner com.afwsamples.testdpc/.DeviceAdminReceiver`
+    - **配置文件所有者**：通过启动“设置 TestDPC”应用创建托管配置文件。
+    - **COPE 配置文件所有者**：结合 ADB 命令创建托管配置文件。
 
-This app can also be found [on the Play store](https://play.google.com/store/apps/details?id=com.afwsamples.testdpc).
+#### TestDPC 作为设备管理角色持有者
+从 v9.0.5 版本开始，TestDPC 可以设置为设备管理角色持有者。需要执行以下 ADB 命令：
+```console
+adb shell cmd role set-bypassing-role-qualification true
+adb shell cmd role add-role-holder android.app.role.DEVICE_POLICY_MANAGEMENT com.afwsamples.testdpc
+```
 
-Provisioning
-------------
+#### 支持与贡献
+- 如果发现错误，请提交问题：[GitHub Issues](https://github.com/googlesamples/android-testdpc/issues)
+- 欢迎提交补丁，可以通过 fork 项目并提交 pull request 来贡献代码。
 
-You can find various kinds of provisioning methods [here](https://developers.google.com/android/work/prov-devices#Key_provisioning_differences_across_android_releases). Let's take a few of them as an example.
+#### 许可证
+- 本项目采用 Apache 2.0 许可证。详情请参阅 LICENSE 文件。
 
-#### QR code provisioing (Device Owner N+ only) ####
-1. Factory reset your device and tap the welcome screen in setup wizard 6 times.
-2. The setup wizard prompts the user to connect to the Internet so the setup wizard can download a QR code reader.
-3. Modify (if needed) and scan [this QR code] (http://down-box.appspot.com/qr/nQB0tw7b).
-4. Follow onscreen instructions
+#### 如何贡献
+- 请阅读并遵循 CONTRIB 文件中的步骤。
 
-#### ADB command ####
-
-**Device Owner**
-
-*   Run the `adb` command:
-
-    ```console
-    adb shell dpm set-device-owner com.afwsamples.testdpc/.DeviceAdminReceiver
-    ```
-
-**Profile Owner**
-
-*   Create a managed profile by launching the “Set up TestDPC” app (if this app
-    seems broken and you are in dark mode, switch to light mode)
-*   Skip adding an account at the end of the flow
-
-**COPE Profile Owner**
-
-*   Create a managed profile by launching the “Set up TestDPC” app (if this app
-    seems broken and you are in dark mode, switch to light mode)
-*   Skip adding an account at the end of the flow
-*   Run the `adb` command:
-
-    ```console
-    adb shell dpm mark-profile-owner-on-organization-owned-device --user 10 com.afwsamples.testdpc/.DeviceAdminReceiver`
-    ```
-
-## TestDPC as DM role holder
-
-TestDPC v9.0.5+ can be setup as Device Management Role Holder.
-
-*   Running the following `adb` commands:
-
-    ```console
-    adb shell cmd role set-bypassing-role-qualification true
-    adb shell cmd role add-role-holder android.app.role.DEVICE_POLICY_MANAGEMENT com.afwsamples.testdpc
-    ```
-
-    Note: unlike DO/PO, this change is not persisted so TestDPC needs to be
-    marked as role holder again if the device reboots.
-
-Android Studio import
----------------------
-
-To import this repository in Android Studio, you need to use the 
-[Bazel for IntelliJ](https://plugins.jetbrains.com/plugin/8609-bazel-for-intellij)
-Plugin.
-
-When importing the project you have to select the folder containing the Bazel's
-`BUILD` file. When prompted to select a "project view", you can choose the
-option "Copy external" and choose the `scripts/ij.bazelproject` available in
-this repository.
-
-Once Bazel has complete the import operation and the first sync of the
-project, you can create a "Run Configuration".
-Select "Bazel Command" as Configuration type and add `//:testdpc` as 
-"target expression".
-
-You can now run the project from inside Android Studio.
-
-Support
--------
-
-If you've found an error in this sample, please file an issue:
-https://github.com/googlesamples/android-testdpc/issues
-
-Patches are encouraged, and may be submitted by forking this project and submitting a pull request through GitHub.
-
-License
--------
-
-Licensed under the Apache 2.0 license. See the LICENSE file for details.
-
-How to make contributions?
---------------------------
-
-Please read and follow the steps in the CONTRIB file.
+以上是 README.md 文件的主要内容概述。如果你有更具体的问题或需要进一步的帮助，请告诉我！
