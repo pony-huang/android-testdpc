@@ -1,0 +1,1186 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ Copyright (C) 2015 The Android Open Source Project
+
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="app_name">测试DPC</string>
+    <string name="setup_app_name">设置测试DPC</string>
+    <string name="cancel">取消</string>
+    <string name="set_up_managed_profile">设置托管配置文件</string>
+    <string name="set_up_device_owner">设置设备所有者</string>
+    <string name="set_up_management_header">设置管理</string>
+    <string name="setup_management_message">当前应用程序不是此设备或配置文件的所有者。请选择以下选项并点击下一步，以通过此应用程序设置适当的管理。</string>
+    <string name="setup_management_message_for_do">当前应用程序已设置为设备所有者。请选择以下选项并点击下一步，以创建由同一应用程序管理的配置文件。</string>
+    <string name="provisioning_not_possible">TestDPC 当前不允许设置为配置文件或设备所有者。</string>
+    <string name="provisioning_not_possible_for_do">TestDPC 当前不允许创建托管配置文件。</string>
+    <string name="exit">退出</string>
+    <string name="managed_account_message">需要管理的已添加账户：</string>
+    <string name="managed_account_complete_message">已添加并管理的账户：</string>
+    <string name="account_migration_failed_message">账户迁移失败：</string>
+    <string name="add_account_later_message">请稍后添加账户。</string>
+    <string name="setup_label">设置</string>
+    <string name="profile_name">示例托管配置文件</string>
+    <string name="skip_user_setup">跳过用户设置</string>
+    <string name="skip_user_consent">跳过预配期间的用户同意</string>
+    <string name="keep_account_migrated">保持账户在此用户上，如果已迁移</string>
+    <string name="skip_encryption">跳过加密</string>
+    <string name="managed_profile_name">示例托管配置文件</string>
+    <string name="managed_user_name">示例托管用户</string>
+    <string name="finish_setup">完成设置</string>
+    <string name="finish_setup_account_not_ready">完成设置但账户可能未准备好</string>
+    <string name="setup_finished">设置已完成</string>
+    <string name="click_finish_to_complete">点击完成以完成设置。</string>
+    <string name="waiting_for_first_account_check_in">正在完善最后的细节</string>
+    <string name="finish_button">完成</string>
+    <string name="all_done">设置成功完成</string>
+    <string name="all_done_explanation_profile_owner">要管理新的托管配置文件，请访问此应用程序的带徽章版本。</string>
+    <string name="all_done_explanation_device_owner">要管理设备，请打开此应用程序。</string>
+    <string name="add_account_title">预配成功完成</string>
+    <string name="add_account_explanation">要添加账户，请选择以下相应选项。如果您想稍后添加，请选择跳过：</string>
+    <string name="add_account">添加账户</string>
+    <string name="add_account_with_name">使用名称添加账户</string>
+    <string name="add_account_skip">跳过</string>
+    <string name="add_account_dialog_title">账户名称：</string>
+    <string name="fail_to_add_account">添加账户失败</string>
+    <string name="remove_account">移除账户</string>
+    <string name="success_remove_account">账户已移除：%s</string>
+    <string name="fail_to_remove_account">移除账户失败：%s</string>
+    <string name="no_accounts_available">没有可用账户。</string>
+    <string name="icon">图标</string>
+    <string name="manage_apps">管理应用程序</string>
+    <string name="reset">重置</string>
+    <string name="save">保存</string>
+    <string name="migration_not_supported">无法将账户迁移到配置文件中</string>
+    <string name="provisioning_not_supported">设备预配未启用</string>
+    <string name="provisioning_failed_or_cancelled">预配失败或已取消</string>
+    <string name="provisioning_params_title">选择预配参数</string>
+    <string name="provisioning_params_color">颜色：</string>
+    <string name="provisioning_params_logo">徽标：</string>
+    <string name="provisioning_params_select">选择</string>
+    <string name="error_opening_image_file">打开图像文件时出错</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+
+    <string name="work_profile">工作配置文件</string>
+    <string name="personal_profile">个人配置文件</string>
+
+    <string name="managed_profile_specific_policy_category_title">托管配置文件策略</string>
+    <string name="managed_profile_specific_policy_title">特定于托管工作配置文件的策略</string>
+    <string name="policies_management">策略管理</string>
+    <string name="other_owner_already_setup_error">已有设备/配置文件所有者，无法启动 TestDPC</string>
+    <string name="invalid_launch_intent_no_account">传入意图中未找到账户</string>
+    <string name="device_admin_receiver_failure">未能成为设备/配置文件所有者</string>
+    <string name="menu_search_title">搜索</string>
+
+    <!-- 禁用首选项的原因 -->
+    <string name="requires_android_api_level">需要 API 级别 <xliff:g id="api level">%d</xliff:g></string>
+    <string name="requires_preview_release">需要 Android P 预览版</string>
+    <string name="requires">需要</string>
+    <string name="requires_delimiter">，</string>
+    <string name="requires_or"> 或 </string>
+    <string name="device_owner">设备所有者</string>
+    <string name="org_owned_profile_owner">组织拥有设备的配置文件所有者</string>
+    <string name="profile_owner">配置文件所有者</string>
+    <string name="primary_user">主用户</string>
+    <string name="secondary_user">次要用户</string>
+    <string name="managed_profile">托管配置文件</string>
+    <string name="requires_device_owner">需要设备所有者</string>
+    <string name="requires_profile_owner_organization_owned_device">需要组织拥有设备的配置文件所有者</string>
+    <string name="requires_device_owner_or_profile_owner_organization_owned_device">需要设备所有者或组织拥有设备的配置文件所有者</string>
+    <string name="requires_device_owner_or_delegation_network_logging">需要设备所有者或委派网络日志记录</string>
+    <string name="requires_device_owner_or_delegation_security_logging">需要设备所有者或委派安全日志记录</string>
+
+    <string name="not_for_parent_profile">不适用于父配置文件</string>
+    <string name="deprecated_since_oreo">自 Android Oreo 起已弃用</string>
+    <string name="user_restricted">被用户限制禁止</string>
+    <string name="requires_network_logs">需要启用网络日志记录</string>
+    <string name="requires_security_logs">需要启用安全日志记录</string>
+    <string name="not_for_password_quality">不适用于当前密码质量</string>
+
+    <string name="this_is_a_device_owner">此应用程序是设备所有者。</string>
+    <string name="this_is_a_profile_owner">此应用程序是配置文件所有者。</string>
+    <string name="this_is_an_org_owned_profile_owner">此应用程序是组织拥有设备的配置文件所有者。</string>
+    <string name="this_is_a_delegated_app">此应用程序具有委派权限。</string>
+    <string name="this_is_a_role_holder">此应用程序是设备管理角色持有者。</string>
+    <string name="this_is_not_an_admin">此应用程序不是管理员。</string>
+
+    <!-- 预配免责声明的字符串 -->
+    <string name="default_disclaimer_company_name">TestDPC 公司</string>
+    <string name="default_disclaimer_emm_name">TestDPC EMM</string>
+
+    <!-- 设备所有者管理的字符串 -->
+    <string name="device_owner_management">设备所有者管理</string>
+    <string name="set_auto_time_required">需要设置自动（网络）时间</string>
+    <string name="set_auto_time">设置自动（网络）时间</string>
+    <string name="set_auto_time_zone">设置自动（网络）时区</string>
+    <string name="wipe_data">擦除数据</string>
+    <string name="wipe_data_title">擦除数据？</string>
+    <string name="wipe_data_confirmation">您确定要擦除数据吗？</string>
+    <string name="wipe_data_include">同时擦除：</string>
+    <string name="external_storage">外部存储</string>
+    <string name="reset_protection_data">出厂重置保护</string>
+    <string name="remove_device_owner">移除此设备所有者</string>
+    <string name="remove_device_owner_title">移除设备所有者？</string>
+    <string name="remove_device_owner_confirmation">策略和限制将继续有效，并且可能需要出厂重置才能清除。</string>
+    <string name="device_owner_removed">此应用程序不再是设备所有者。</string>
+    <!-- 组织拥有设备的工作配置文件归类于设备所有者管理，为了方便。 -->
+    <string name="factory_reset_org_owned">出厂重置组织拥有设备的工作配置文件</string>
+    <string name="set_factory_reset_protection_policy">设置出厂重置保护策略</string>
+    <string name="factory_reset_protection_policy">出厂重置保护策略</string>
+    <string name="factory_reset_protection_policy_accounts">账户</string>
+    <string name="factory_reset_protection_policy_enabled">已启用</string>
+    <string-array name="factory_reset_protection_policy_enabled_choices">
+        <item>禁用</item>
+        <item>启用</item>
+    </string-array>
+    <string name="cleared_factory_reset_protection_policy">已清除出厂重置保护策略</string>
+    <string name="saved_factory_reset_protection_policy">已保存出厂重置保护策略</string>
+
+    <!-- 重启设备的字符串 -->
+    <string name="reboot">重启设备</string>
+    <string name="reboot_error_msg">在通话过程中无法重启设备。</string>
+
+    <!-- 跨配置文件意图过滤器的字符串 -->
+    <string name="cross_profile_intents">跨配置文件意图</string>
+    <string name="add_cross_profile_intents_title">添加跨配置文件意图</string>
+    <string name="clear_cross_profile_intents">清除所有跨配置文件意图</string>
+    <string name="actions_title">操作：</string>
+    <string name="categories_title">类别：</string>
+    <string name="data_schemes_title">方案：</string>
+    <string name="data_types_title">数据类型：</string>
+    <string name="add_cross_profile_intent_success_msg">跨配置文件意图过滤器已添加</string>
+    <string name="add_cross_profile_intent_failed_msg">跨配置文件意图需要至少一个操作、类别或方案</string>
+    <string name="cross_profile_intent_filters_cleared">所有跨配置文件意图过滤器已被移除。</string>
+    <string name="cross_profile_intent_filters_flags">标志：</string>
+    <string name="add">添加</string>
+    <string name="clear">清除</string>
+
+    <!-- 系统信息的字符串 -->
+    <string name="invalid_security_patch">无效的安全补丁格式：<xliff:g id="security_patch">%s</xliff:g></string>
+    <string name="security_patch">安全补丁</string>
+
+    <!-- 相机和屏幕捕获的字符串 -->
+    <string name="camera_title">相机、屏幕捕获和音频</string>
+    <string name="display_media">显示媒体</string>
+    <string name="disable_camera">禁用相机</string>
+    <string name="disable_camera_on_parent">禁用父配置文件中的相机</string>
+    <string name="capture_image">捕获图像</string>
+    <string name="capture_video">捕获视频</string>
+    <string name="camera_app_not_found">确保已启用相机应用程序</string>
+    <string name="play_button_label">播放</string>
+    <string name="stop_button_label">停止</string>
+    <string name="delete_button_label">删除</string>
+    <string name="disable_screen_capture">禁用屏幕捕获</string>
+    <string name="disable_screen_capture_on_parent">禁用父配置文件中的屏幕捕获</string>
+    <string name="mute_audio">静音音频</string>
+
+    <!-- 工作配置文件管理的字符串 -->
+    <string name="profile_management_title">工作配置文件管理</string>
+    <string name="remove_managed_profile">移除工作配置文件</string>
+    <string name="removing_managed_profile">正在移除工作配置文件</string>
+    <string name="lock_parent_key">锁定父配置文件</string>
+    <string name="evict_ce_key">驱逐 CE 密钥</string>
+
+    <!-- 跨配置文件小部件提供程序的字符串 -->
+    <string name="cross_profile_widget_providers_title">跨配置文件小部件提供程序</string>
+    <string name="add_cross_profile_app_widget_providers_title">启用应用小部件</string>
+    <string name="add_cross_profile_app_widget_providers">启用工作配置文件应用中的应用小部件</string>
+    <string name="remove_cross_profile_app_widget_providers_title">禁用应用小部件</string>
+    <string name="remove_cross_profile_app_widget_providers">移除工作配置文件应用中的应用小部件</string>
+    <string name="all_cross_profile_widget_providers_are_enabled">没有来自任何工作配置文件应用的小部件处于禁用状态。</string>
+    <string name="all_cross_profile_widget_providers_are_disabled">没有来自任何工作配置文件应用的小部件处于启用状态。</string>
+    <string name="cross_profile_widget_enable">已启用来自 "%s" 的小部件。</string>
+    <string name="cross_profile_widget_disable">已禁用来自 "%s" 的小部件。</string>
+
+
+    <!-- 策略相关的字符串 -->
+    <string name="policies_title">策略</string>
+    <string name="disable_bluetooth_contact_sharing">禁用蓝牙联系人共享</string>
+    <string name="disable_cross_profile_caller_id">禁用跨配置文件来电显示</string>
+    <string name="disable_cross_profile_contacts_search">禁用跨配置文件联系人搜索</string>
+
+    <!-- APN 相关的字符串 -->
+    <string name="override_apn_title">覆盖 APN 管理</string>
+    <string name="manage_override_apn">管理覆盖 APN</string>
+    <string name="insert_override_apn">插入覆盖 APN</string>
+    <string name="insert_override_apn_error">插入覆盖 APN 失败，格式不正确</string>
+    <string name="remove_override_apn">移除所有覆盖 APN</string>
+    <string name="enable_override_apn">启用覆盖 APN</string>
+    <string name="apn_entry_name">条目名称</string>
+    <string name="apn_apn_name">APN 名称</string>
+    <string name="apn_proxy">代理地址</string>
+    <string name="apn_port">代理端口</string>
+    <string name="apn_mmsc">MMSC</string>
+    <string name="apn_mmsproxy">MMS 代理地址</string>
+    <string name="apn_mmsport">MMS 代理端口</string>
+    <string name="apn_user">用户</string>
+    <string name="apn_password">密码</string>
+    <string name="apn_auth_type">认证类型</string>
+    <string name="apn_type">APN 类型位掩码</string>
+    <string name="apn_numeric">运营商编号（MCC+MNC）</string>
+    <string name="apn_protocol">协议</string>
+    <string name="apn_roaming_protocol">漫游协议</string>
+    <string name="apn_carrier_enabled">运营商启用</string>
+    <string name="apn_network_bitmask">网络类型位掩码</string>
+    <string name="apn_mvno_type">MVNO 类型</string>
+    <string name="apn_numeric_hint">编号=MCC+MNC</string>
+
+    <string name="apn_entry_name_cannot_be_empty">条目名称不能为空</string>
+    <string name="apn_name_cannot_be_empty">APN 名称不能为空</string>
+    <string name="apn_type_cannot_be_zero">APN 类型位掩码不能为空或为零</string>
+    <string name="apn_wrong_url">无法解析 MMSC</string>
+    <string name="apn_wrong_inetaddress">无法解析代理地址或 MMS 代理地址</string>
+    <string name="apn_wrong_port">无法解析代理端口或 MMS 代理端口</string>
+
+    <!-- 跨配置文件日历相关的字符串 -->
+    <string name="cross_profile_calendar">跨配置文件日历</string>
+    <string name="cross_profile_calendar_set_allowed_packages">设置允许的包</string>
+    <string name="cross_profile_calendar_set_allowed_packages_title">输入包名，以逗号分隔</string>
+    <string name="cross_profile_calendar_allow_all_packages">允许所有包</string>
+
+    <!-- Wi-Fi 管理相关的字符串 -->
+    <string name="wifi_management_title">Wi-Fi 管理</string>
+    <string name="create_wifi_configuration">创建 Wi-Fi 配置</string>
+    <string name="add_network">添加网络</string>
+    <string name="wifi_ssid">网络名称</string>
+    <string name="wifi_ssid_hint">输入 SSID</string>
+    <string name="wifi_security">安全性</string>
+    <string-array name="wifi_security_choices">
+        <item>无</item>
+        <!-- 不要翻译。 -->
+        <item>WEP</item>
+        <!-- 不要翻译。 -->
+        <item>WPA/WPA2</item>
+    </string-array>
+    <string name="wifi_password">密码</string>
+    <string name="wifi_show_password">显示密码</string>
+    <string name="minimum_limit">至少 8 个字符</string>
+    <string name="wifi_unchanged">(未更改)</string>
+    <string name="wifi_save">保存</string>
+    <string name="wifi_cancel">取消</string>
+    <string name="wifi_config_success">Wi-Fi 配置已保存。</string>
+    <string name="wifi_config_fail">未能保存 Wi-Fi 配置。</string>
+    <string name="enable_wifi_config_lockdown">DO 创建的 Wi-Fi 配置仅可由 DO 修改</string>
+    <string name="modify_wifi_configuration">修改 Wi-Fi 配置</string>
+    <string name="modify_owned_wifi_configuration">修改所属 Wi-Fi 配置</string>
+    <string name="remove_not_owned_wifi_configurations">移除所有不属于 DO 的网络</string>
+    <string name="show_wifi_mac_address">显示 Wi-Fi MAC 地址</string>
+    <string name="show_wifi_mac_address_title">Wi-Fi MAC 地址</string>
+    <string name="show_wifi_mac_address_not_available_msg">Wi-Fi MAC 地址不可用</string>
+    <string name="wifi_configs_header">已保存的 Wi-Fi 配置</string>
+    <string name="wifi_update_config_button">更新选定项</string>
+    <string name="wifi_remove_config_button">移除选定项</string>
+    <string name="wifi_remove_all_config_button">全部移除</string>
+    <string name="wifi_modification_error_title">配置修改错误</string>
+    <string name="wifi_remove_config_error">无法移除 SSID \'<xliff:g id="wifi_ssid">%1$s</xliff:g>\'：netId = <xliff:g id="wifi_network_id">%2$d</xliff:g></string>
+    <string name="create_eap_tls_wifi_configuration">创建 EAP-TLS Wi-Fi 配置</string>
+    <string name="wifi_identity">身份（如果有）</string>
+    <string name="wifi_client_cert_password">客户端证书密码（如果有）</string>
+    <string name="import_ca_certificate">导入 CA 证书</string>
+    <string name="import_user_certificate">导入用户证书</string>
+    <string name="select_user_certificate">选择用户证书</string>
+    <string name="selected_certificate">已选证书：<xliff:g example="server certificate" id="certificate_alias">%1$s</xliff:g></string>
+    <string name="selected_keychain_certificate">已选 KeyChain 别名：<xliff:g example="somealias" id="certificate_alias">%1$s</xliff:g></string>
+    <string name="selected_certificate_none">未选择证书</string>
+    <string name="error_missing_ssid">缺少 SSID</string>
+    <string name="error_missing_ca_cert">缺少 CA 证书</string>
+    <string name="error_missing_client_cert">缺少客户端证书或无效的证书密码</string>
+    <string name="error_cannot_grant_to_wifi">无法允许 Wi-Fi 使用客户端密钥对进行身份验证</string>
+    <string name="wifi_eap_tls_dialog_message">EAP_TLS 使用 X.509 CA 证书和 PKCS12 客户端证书</string>
+    <string name="wifi_unknown_cert">未知证书</string>
+    <string name="set_wifi_min_security_level">设置 Wi-Fi 最低安全级别</string>
+    <string name="security_level_open">开放</string>
+    <string name="security_level_personal">个人</string>
+    <string name="security_level_enterprise_eap">企业 EAP</string>
+    <string name="security_level_enterprise_192">企业 192</string>
+    <string name="type_allowlist">允许列表</string>
+    <string name="type_denylist">拒绝列表</string>
+    <string name="ssid_list_description">输入逗号分隔的 SSID - 空列表将移除限制</string>
+    <string name="set_wifi_ssid_restriction">设置 Wi-Fi SSID 限制列表</string>
+
+    <!-- 应用程序管理相关的字符串 -->
+    <string name="apps_management_title">应用程序管理</string>
+    <string name="package_name_hints">包名</string>
+    <string name="package_name_error">未找到包：%s</string>
+    <string name="enable_system_apps_title">启用系统应用</string>
+    <string name="enable_system_apps_by_package_name">通过包名启用系统应用</string>
+    <string name="enable_system_apps_by_package_name_success_msg">%s 已启用。</string>
+    <string name="enable_system_apps_by_intent">通过意图启用系统应用</string>
+    <string name="enable_system_apps_failure_msg">未能启用接收给定意图的系统应用</string>
+    <string name="enable_system_apps_attempt_msg">已启用接收给定意图的系统应用</string>
+    <string name="no_disabled_system_apps">所有系统应用均已启用。</string>
+    <string name="install_existing_packages_title">安装现有包</string>
+    <string name="install_existing_packages_by_package_title">按包安装现有包</string>
+    <string name="install_existing_packages_success_msg">%s 已安装。</string>
+    <string name="no_uninstalled_apps">所有缓存的应用程序都已安装。</string>
+    <string name="install_apk_package_title">从 APK 文件安装包</string>
+    <string name="uninstall_packages_title">卸载包</string>
+    <string name="hide_apps_title">隐藏应用程序</string>
+    <string name="hide_apps_parent_title">在父级隐藏应用程序</string>
+    <string name="hide_apps_empty">所有应用程序都已隐藏。</string>
+    <string name="hide_apps_success">%s 现已隐藏。</string>
+    <string name="hide_apps_failure">%s 无法隐藏，因为它是一个活动管理员或系统必需。</string>
+    <string name="hide_apps_system_failure">%s 无法隐藏，因为提供的包不是系统包。</string>
+    <string name="unhide_apps_title">取消隐藏应用程序</string>
+    <string name="unhide_apps_parent_title">在父级取消隐藏应用程序</string>
+    <string name="unhide_apps_empty">当前没有应用程序被隐藏。</string>
+    <string name="unhide_apps_success">%s 不再隐藏。</string>
+    <string name="unhide_apps_failure">%s 无法取消隐藏。</string>
+    <string name="unhide_apps_system_failure">%s 无法取消隐藏，因为提供的包不是系统包。</string>
+    <string name="suspend_apps_title">挂起应用程序</string>
+    <string name="suspend_apps_empty">所有应用程序都已挂起。</string>
+    <string name="suspend_apps_success">%s 现已挂起。</string>
+    <string name="suspend_apps_failure">%s 无法挂起。</string>
+    <string name="unsuspend_apps_title">取消挂起应用程序</string>
+    <string name="unsuspend_apps_empty">当前没有应用程序被挂起。</string>
+    <string name="unsuspend_apps_success">%s 不再挂起。</string>
+    <string name="unsuspend_apps_failure">%s 无法取消挂起。</string>
+    <string name="clear_app_data_title">清除应用程序数据</string>
+    <string name="clear_app_data_empty">没有可用的应用程序。</string>
+    <string name="clear_app_data_success">%s 数据已被清除。</string>
+    <string name="clear_app_data_failure">%s 数据无法清除。</string>
+    <string name="keep_uninstalled_packages">保留已卸载的包</string>
+    <string name="enter_package_name">输入包名</string>
+    <string name="package_name_empty_error">包名不能为空</string>
+
+    <!-- 锁任务相关的字符串 -->
+    <string name="lock_task_title">锁任务</string>
+    <string name="manage_lock_task">管理锁任务列表</string>
+    <string name="no_primary_app_available">没有可用的主要应用程序</string>
+    <string name="check_lock_task_permitted">检查锁任务是否允许</string>
+    <string name="input_package_name_hints">输入一个包名</string>
+    <string name="check_lock_task_permitted_result_permitted">锁任务已允许。</string>
+    <string name="check_lock_task_permitted_result_not_permitted">锁任务未允许。</string>
+    <string name="set_lock_task_features_title">设置锁任务功能</string>
+    <string name="lock_task_feature_system_info">系统信息</string>
+    <string name="lock_task_feature_notifications">通知</string>
+    <string name="lock_task_feature_home">主页</string>
+    <string name="lock_task_feature_overview">概览</string>
+    <string name="lock_task_feature_global_actions">全局操作（电源按钮菜单）</string>
+    <string name="lock_task_feature_keyguard">锁屏</string>
+    <string name="start_lock_task">启动锁任务模式</string>
+    <string name="relaunch_in_lock_task_title">在锁任务模式下启动另一个活动</string>
+    <string name="stop_lock_task">停止锁任务模式</string>
+    <string name="lock_task_unavailable">无法设置锁任务包：此用户未关联</string>
+
+    <!-- 单用途设备相关的字符串 -->
+    <string name="single_use_devices">单用途设备</string>
+    <string name="disable_status_bar">禁用状态栏</string>
+    <string name="reenable_status_bar">重新启用状态栏</string>
+    <string name="disable_keyguard">禁用锁屏</string>
+    <string name="reenable_keyguard">重新启用锁屏</string>
+    <string name="kiosk_mode">展柜模式</string>
+    <string name="kiosk_select_title">选择展柜应用</string>
+    <string name="start_kiosk_mode">启动展柜模式</string>
+    <string name="stop_kiosk_mode">停止展柜模式</string>
+    <string name="setup_cosu">正在设置您的 COSU 设备\u2026</string>
+    <string name="setup_cosu_success">COSU 设备设置成功</string>
+    <string name="setup_cosu_failure">COSU 设置过程中出现错误</string>
+    <string name="setup_cosu_status_download">正在下载配置文件\u2026</string>
+    <string name="setup_cosu_status_parse">正在解析配置文件\u2026</string>
+    <string name="setup_cosu_status_apps">正在下载和安装其他应用程序\u2026</string>
+
+    <!-- 用户限制管理相关的字符串 -->
+    <string name="user_restrictions_preference_title">设置用户限制</string>
+    <string name="user_restrictions_parent_preference_title">在父级设置用户限制</string>
+    <string name="user_restrictions_management_title">用户限制</string>
+    <string name="allow_parent_profile_app_linking">允许链接到父级的应用程序</string>
+    <string name="disallow_add_managed_profile">禁止添加托管配置文件</string>
+    <string name="disallow_add_user">禁止添加用户</string>
+    <string name="disallow_adjust_volume">禁止调整音量</string>
+    <string name="disallow_apps_control">禁止应用控制</string>
+    <string name="disallow_bluetooth">禁止蓝牙</string>
+    <string name="disallow_bluetooth_sharing">禁止蓝牙共享</string>
+    <string name="disallow_change_wifi_state">禁止更改 Wi-Fi 状态</string>
+    <string name="disallow_wifi_tethering">禁止 Wi-Fi 热点</string>
+    <string name="disallow_wifi_direct">禁止 Wi-Fi Direct</string>
+    <string name="disallow_add_wifi_config">禁止添加 Wi-Fi 配置</string>
+    <string name="disallow_sharing_admin_configured_wifi">禁止共享管理员配置的 Wi-Fi</string>
+    <string name="disallow_config_bluetooth">禁止配置蓝牙</string>
+    <string name="disallow_config_cell_broadcasts">禁止配置蜂窝广播</string>
+    <string name="disallow_config_credentials">禁止配置凭据</string>
+    <string name="disallow_config_mobile_networks">禁止配置移动网络</string>
+    <string name="disallow_config_tethering">禁止配置热点</string>
+    <string name="disallow_config_vpn">禁止配置 VPN</string>
+    <string name="disallow_config_wifi">禁止配置 Wi-Fi</string>
+    <string name="disallow_create_windows">禁止创建窗口</string>
+    <string name="disallow_system_error_dialogs">禁止系统错误对话框</string>
+    <string name="disallow_cross_profile_copy_paste">禁止跨配置文件复制粘贴</string>
+    <string name="disallow_data_roaming">禁止数据漫游</string>
+    <string name="disallow_debugging_features">禁止调试功能</string>
+    <string name="disallow_factory_reset">禁止出厂重置</string>
+    <string name="disallow_fun">禁止娱乐功能</string>
+    <string name="disallow_install_apps">禁止安装应用程序</string>
+    <string name="disallow_install_unknown_sources">禁止安装未知来源的应用程序</string>
+    <string name="check_setting_disallow_install_unknown_sources">确保“允许安装未知来源”在设置管理中正确勾选。</string>
+    <string name="disallow_install_unknown_sources_globally">全局禁止安装未知来源的应用程序</string>
+    <string name="check_setting_ok">确定</string>
+    <string name="disallow_modify_accounts">禁止修改帐户</string>
+    <string name="disallow_mount_physical_media">禁止挂载物理媒体</string>
+    <string name="disallow_network_reset">禁止网络重置</string>
+    <string name="disallow_outgoing_beam">禁止外发束</string>
+    <string name="disallow_outgoing_calls">禁止拨打电话</string>
+    <string name="disallow_remove_managed_profile">禁止移除托管配置文件</string>
+    <string name="disallow_remove_user">禁止移除用户</string>
+    <string name="disallow_safe_boot">禁止安全启动</string>
+    <string name="disallow_set_user_icon">禁止设置用户图标</string>
+    <string name="disallow_set_wallpaper">禁止设置壁纸</string>
+    <string name="disallow_share_location">禁止共享位置</string>
+    <string name="disallow_sms">禁止短信</string>
+    <string name="disallow_uninstall_apps">禁止卸载应用程序</string>
+    <string name="disallow_unmute_microphone">禁止解除麦克风静音</string>
+    <string name="disallow_usb_file_transfer">禁止 USB 文件传输</string>
+    <string name="disallow_microphone_toggle">禁止切换麦克风</string>
+    <string name="disallow_camera_toggle">禁止切换摄像头</string>
+    <string name="ensure_verify_apps">确保验证应用程序</string>
+    <string name="disallow_autofill">禁止自动填充</string>
+    <string name="disallow_unified_password">需要单独挑战</string>
+    <string name="disallow_user_switch">禁止用户切换</string>
+    <string name="disallow_config_location">禁止配置位置</string>
+    <string name="disallow_airplane_mode">禁止飞行模式</string>
+    <string name="disallow_config_brightness">禁止配置亮度</string>
+    <string name="disallow_config_date_time">禁止配置日期时间</string>
+    <string name="disallow_config_screen_timeout">禁止配置屏幕超时</string>
+    <string name="disallow_ambient_display">禁止环境显示</string>
+    <string name="disallow_share_into_work_profile">禁止共享数据到工作配置文件</string>
+    <string name="disallow_printing">禁止打印</string>
+    <string name="disallow_config_private_dns">禁止配置私有 DNS</string>
+    <string name="disallow_content_capture">禁止内容捕获</string>
+    <string name="disallow_content_suggestions">禁止内容建议</string>
+    <string name="disallow_cellular_2g">禁止 2G 网络</string>
+    <string name="disallow_config_default_apps">禁止配置默认应用</string>
+
+    <!-- Strings for certificate management  -->
+    <string name="certificate_management_title">证书管理</string>
+    <string name="request_manage_credentials">请求管理凭据</string>
+    <string name="install_key_certificate">安装私钥/公钥对</string>
+    <string name="remove_key_certificate">移除私钥/公钥对</string>
+    <string name="remove_keypair_successfully">密钥对已移除。</string>
+    <string name="remove_keypair_fail">密钥对移除失败。</string>
+    <string name="key_override_alias">用别名覆盖客户端证书</string>
+    <string name="certificate_password_prompt_title">提取证书</string>
+    <string name="certificate_password_prompt_enter_password">输入密码以提取证书。</string>
+    <string name="certificate_password_prompt_incorrect">请输入正确的密码。</string>
+    <string name="certificate_alias_prompt_title">命名证书</string>
+    <string name="certificate_alias_prompt_certificate_name">证书名称：</string>
+    <string name="certificate_added">\"%s\" 证书已添加。</string>
+    <string name="certificate_add_failed">\"%s\" 证书无法安装。</string>
+    <string name="not_a_key_certificate">所选证书不是私钥证书。</string>
+    <string name="generate_key_and_certificate">生成私钥/公钥对</string>
+    <string name="key_generation_successful">密钥和证书生成成功</string>
+    <string name="key_generation_failed">密钥生成失败</string>
+    <string name="test_key_usage">测试密钥的签名/验证</string>
+    <string name="key_usage_successful">成功使用 %1$s 签名</string>
+    <string name="key_usage_failed">使用密钥进行签名/验证失败</string>
+    <string name="attestation_details_header">证明记录详情：</string>
+    <string name="attestation_challenge_description">证明挑战：</string>
+    <string name="device_serial_number_description">证书中的序列号：</string>
+    <string name="device_imei_description">证书中的IMEI：</string>
+    <string name="device_meid_description">证书中的MEID：</string>
+    <string name="attestation_chain_length_description">证明链长度：</string>
+    <string name="attestation_root_description">证明根：</string>
+    <string name="install_ca_certificate">安装CA证书</string>
+    <string name="install_ca_successfully">所选CA证书已安装。</string>
+    <string name="install_ca_fail">所选CA证书未安装。</string>
+    <string name="get_ca_certificates">获取CA证书列表</string>
+    <string name="no_ca_certificate">没有安装CA证书。</string>
+    <string name="installed_ca_title">已安装的CA证书</string>
+    <string name="remove_all_ca_certificates">移除所有CA证书</string>
+    <string name="all_ca_certificates_removed">所有CA证书已被移除。</string>
+    <string name="user_selectability_description">用户可选择性</string>
+    <string name="user_selectability_checkbox">使用户可选择</string>
+    <string name="ec_key_checkbox">生成EC密钥（默认：RSA）</string>
+    <string name="key_attestation_description">密钥证明选项</string>
+    <string name="key_attestation_checkbox">包含密钥证明挑战</string>
+    <string name="device_id_attestation_description">设备ID证明选项</string>
+    <string name="brand_attestation_checkbox">仅包含品牌证明</string>
+    <string name="serial_num_attestation_checkbox">包含设备序列号</string>
+    <string name="imei_attestation_checkbox">包含设备IMEI</string>
+    <string name="meid_attestation_checkbox">包含设备MEID</string>
+    <string name="strongbox_features_description">StrongBox相关选项</string>
+    <string name="use_strongbox_checkbox">使用StrongBox</string>
+    <string name="use_individual_attestation_checkbox">使用个人证明证书</string>
+    <string name="invalid_app_uri_policy">无效的策略字符串：%1$s</string>
+    <string name="grant_key_pair_to_app">授予应用程序密钥对</string>
+    <string name="grant_key_pair_title">授予包的密钥对</string>
+    <string name="key_pair_alias_description">输入密钥对别名</string>
+    <string name="grant_to_package_name_description">输入包名</string>
+    <string name="grant_button">授予</string>
+    <string name="key_pair_alias_empty">密钥对别名不能为空。</string>
+    <string name="grant_to_package_name_empty">包名不能为空。</string>
+
+    <!-- Strings for nearby policies -->
+    <string name="nearby_streaming_section">附近流媒体策略</string>
+    <string name="nearby_notification_streaming">附近通知流媒体策略</string>
+    <string name="nearby_app_streaming">附近应用流媒体策略</string>
+    <string-array name="nearby_streaming_policies">
+        <!-- Order of the values here must match DevicePolicyManager.NearbyStreamingPolicy -->
+        <item>不受策略控制</item>
+        <item>已禁用</item>
+        <item>已启用</item>
+        <item>仅同一管理账户</item>
+    </string-array>
+
+
+    <!-- 应用限制相关字符串 -->
+    <string name="managed_configurations">托管配置</string>
+    <string name="define_bundle">定义包</string>
+    <string name="define_bundle_array">定义包数组</string>
+    <string name="load_manifest_restrictions">加载清单限制</string>
+    <string name="set_app_restrictions_success">成功设置应用限制：%s</string>
+    <string name="app_restrictions_info">%1$s - %2$s</string>
+    <string name="plus">+</string>
+    <string name="app_restrictions_managing_package">应用限制管理器</string>
+
+    <!-- 应用反馈相关字符串 -->
+    <string name="app_feedback_notifications">应用反馈通知</string>
+
+    <!-- 流量数据限制相关字符串 -->
+    <string name="metered_data_restriction">禁用计量网络数据</string>
+    <string name="update_pkgs">更新</string>
+    <string name="metered_data_restriction_failed_pkgs">无法限制 %s</string>
+
+    <!-- 委派权限相关字符串 -->
+    <string name="delegation_title">委派</string>
+    <string name="generic_delegation">通用委派</string>
+    <string name="delegation_success">范围保存成功</string>
+    <string name="delegation_error">错误，查看日志</string>
+    <string name="delegation_scope_instructions">选择要委派的范围</string>
+    <string name="delegation_scope_prompt_title">委派范围</string>
+    <string name="delegation_scope_cert_install">证书安装</string>
+    <string name="delegation_scope_app_restrictions">应用限制</string>
+    <string name="delegation_scope_block_uninstall">阻止卸载</string>
+    <string name="delegation_scope_permission_grant">权限授予</string>
+    <string name="delegation_scope_package_access">包访问</string>
+    <string name="delegation_scope_enable_system_app">启用系统应用</string>
+    <string name="delegation_scope_keep_uninstalled_packages">保留已卸载的包</string>
+    <string name="delegation_scope_network_logging">访问网络日志</string>
+    <string name="delegation_scope_security_logging">访问安全日志</string>
+    <string name="delegation_scope_cert_selection">选择私钥</string>
+    <string name="manage_cert_installer">委派证书安装程序</string>
+
+    <!-- 编辑应用限制时使用的对话框字符串 -->
+    <string name="select_type">选择类型：</string>
+    <string name="app_restrictions_key">键：</string>
+    <string name="key_hint">限制键</string>
+    <string name="app_restrictions_value">值：</string>
+    <string name="edit_bundle_instruction">在编辑屏幕上添加值</string>
+    <string name="key_empty_error">限制键不能为空</string>
+    <string name="value_not_valid">限制值无效</string>
+    <string name="restriction_save_label">保存</string>
+    <string name="restriction_cancel_label">取消</string>
+    <string name="configure">配置</string>
+
+    <!-- 远程错误报告 -->
+    <string name="bugreport_title">错误报告</string>
+    <string name="request_bugreport">请求错误报告</string>
+    <string name="received_bugreport">收到错误报告 %1$s 哈希：%2$s 字节：%3$d</string>
+    <string name="received_bugreport_failed_retrieval">收到错误报告文件，但未能获取</string>
+    <string name="bugreport_sharing_declined">用户拒绝共享错误报告</string>
+    <string name="bugreport_failure_message">错误报告请求失败：%s</string>
+    <string name="bugreport_failure_throttled">此设备上已经在收集错误报告</string>
+    <string name="bugreport_failure_exception">无法请求错误报告：设备上有未关联的用户</string>
+    <string name="bugreport_failure_failed_completing">错误报告收集操作失败</string>
+    <string name="bugreport_failure_file_no_longer_available">错误报告文件不再可用</string>
+
+    <!-- 设备所有者的备份和恢复 -->
+    <string name="enable_backup_service">启用备份服务</string>
+
+    <string name="common_criteria_mode">启用通用标准模式</string>
+
+    <string name="enable_usb_data_signaling">启用 USB 数据信号</string>
+
+    <!-- 暂停个人应用 -->
+    <string name="suspend_personal_apps">暂停个人应用</string>
+
+    <!-- 工作资料允许的最大离线时间 -->
+    <string name="profile_max_time_off">工作资料最大离线时间（秒）</string>
+
+    <!-- 企业安全日志 -->
+    <string name="enable_security_logging">启用安全日志</string>
+    <string name="request_security_logs">请求安全日志</string>
+    <string name="request_pre_reboot_security_logs">请求重启前的安全日志</string>
+    <string name="failed_to_retrieve_security_logs">未能检索安全日志，可能是因为它们在过去 2 小时内被访问过</string>
+    <string name="failed_to_retrieve_pre_reboot_security_logs">未能检索重启前的安全日志，请确保您的设备支持此功能</string>
+    <string name="exception_retrieving_security_logs">不允许检索安全日志，抛出 SecurityException 异常</string>
+    <string name="security_logs_retrieved_message">---- 日志已检索  %s ----</string>
+    <string name="on_security_logs_available">测试 DPC：安全日志已准备好检索</string>
+
+    <!-- 网络日志 -->
+    <string name="enable_network_logging">启用网络日志</string>
+    <string name="request_network_logs">请求网络日志</string>
+    <string name="on_network_logs_available">测试 DPC：网络日志已准备好检索</string>
+    <string name="on_network_logs_available_success">测试 DPC：已检索到网络日志批次 %d</string>
+    <string name="on_network_logs_available_failure">测试 DPC：无法检索网络日志</string>
+    <string name="on_network_logs_available_token_failure">测试 DPC：无法检索网络日志批次 %d</string>
+
+    <!-- 辅助功能 -->
+    <string name="accessibility_title">辅助功能</string>
+    <string name="set_accessibility_services">设置辅助功能服务</string>
+    <string name="allow_all">允许全部</string>
+    <string name="set_accessibility_services_successful">已启用给定的辅助功能服务列表</string>
+    <string name="set_accessibility_services_fail">无法禁用主用户启用的辅助功能服务</string>
+    <string name="all_accessibility_services_enabled">所有辅助功能服务均已启用</string>
+
+    <!-- 输入法 -->
+    <string name="input_methods_title">输入法</string>
+    <string name="set_input_methods">设置输入法</string>
+    <string name="set_input_methods_on_parent">在父级设置输入法</string>
+    <string name="set_input_methods_successful">已启用给定的输入法列表</string>
+    <string name="set_input_methods_fail">无法禁用主用户启用的输入法</string>
+    <string name="all_input_methods_enabled">所有输入法均已启用</string>
+    <string name="add_input_method_on_parent_fail">在父级添加输入法失败</string>
+    <string name="all_input_methods_on_parent">允许父级上的所有输入法</string>
+    <string name="system_input_methods_on_parent">仅允许父级上的系统输入法</string>
+    <string name="input_methods_all">允许所有输入法</string>
+    <string name="input_methods_system">仅允许系统输入法</string>
+
+    <!-- 通知监听器 -->
+    <string name="notification_listeners_title">通知监听器服务</string>
+    <string name="set_notification_listeners">设置通知监听器服务</string>
+    <string name="set_notification_listeners_successful">已启用给定的通知监听器列表</string>
+    <string name="set_notification_listeners_fail">无法添加提供的通知监听器列表</string>
+    <string name="all_notification_listeners_enabled">所有通知监听器均已启用</string>
+    <string name="set_notification_listeners_text">设置通知监听器服务文本</string>
+    <string name="set_notification_listener_text_title">通知监听器包</string>
+    <string name="set_notification_listener_text_hint">逗号分隔的包列表</string>
+
+    <string name="loading_resuls">正在加载...</string>
+
+
+    <!-- 账户管理 -->
+    <string name="account_management_title">账户管理</string>
+    <string name="set_disable_account_management">切换账户管理</string>
+    <string name="get_disable_account_management">获取已禁用管理的账户类型</string>
+    <string name="account_type_hint">输入账户类型</string>
+    <string name="disable">禁用</string>
+    <string name="account_management_disabled">已禁用 \"%s\" 的账户管理。</string>
+    <string name="account_management_enabled">已启用 \"%s\" 的账户管理。</string>
+    <string name="fail_to_set_account_management">切换账户管理失败。</string>
+    <string name="list_of_disabled_account_types">已禁用的账户类型列表</string>
+    <string name="no_disabled_account">没有已禁用的账户类型。</string>
+
+    <!-- 用户管理 -->
+    <string name="user_management">用户管理</string>
+    <string name="create_and_initialize_user">创建并初始化用户</string>
+    <string name="create_and_manage_user">创建并管理用户</string>
+    <string name="create_managed_profile">创建受管配置文件</string>
+    <string name="skip_setup_wizard">跳过设置向导</string>
+    <string name="make_user_ephemeral">使用户临时化</string>
+    <string name="start_user_in_background">在后台启动用户</string>
+    <string name="user_started_in_background">用户已在后台启动。</string>
+    <string name="failed_to_start_user_in_background">未能在后台启动用户。</string>
+    <string name="leave_all_system_apps_enabled">保留所有系统应用启用状态</string>
+    <string name="user_created">成功创建了序列号为 %1$d 的用户。</string>
+    <string name="user_string">用户 %1$d</string>
+    <string name="enter_username_hint">输入用户名</string>
+    <string name="failed_to_create_user">创建用户失败。</string>
+    <string name="enter_user_id">输入用户序列号</string>
+    <string name="remove_user">移除用户</string>
+    <string name="user_removed">用户已移除。</string>
+    <string name="failed_to_remove_user">移除用户失败。</string>
+    <string name="switch_user">切换用户</string>
+    <string name="user_switched">用户已切换。</string>
+    <string name="failed_to_switch_user">切换用户失败。</string>
+    <string name="stop_user">停止用户</string>
+    <string name="user_stopped">用户已停止。</string>
+    <string name="failed_to_stop_user">停止用户失败。</string>
+    <string name="logout_user">注销用户</string>
+    <string name="user_logouted">用户已注销。</string>
+    <string name="failed_to_logout_user">注销用户失败。</string>
+    <string name="enable_logout">启用注销</string>
+    <string name="set_user_session_message">设置用户会话消息</string>
+    <string name="enter_start_session_message">输入开始会话消息</string>
+    <string name="enter_end_session_message">输入结束会话消息</string>
+    <string name="affiliated_user">关联用户</string>
+    <string name="ephemeral_user">临时用户</string>
+    <string name="on_user_added_title">用户已创建</string>
+    <string name="on_user_removed_title">用户已移除</string>
+    <string name="on_user_started_title">用户已启动</string>
+    <string name="on_user_stopped_title">用户已停止</string>
+    <string name="on_user_switched_title">用户已切换</string>
+    <string name="on_user_added_message">已创建序列号为 %1$d 的用户。</string>
+    <string name="on_user_removed_message">已移除序列号为 %1$d 的用户。</string>
+    <string name="on_user_started_message">已启动序列号为 %1$d 的用户。</string>
+    <string name="on_user_stopped_message">已停止序列号为 %1$d 的用户。</string>
+    <string name="on_user_switched_message">已切换到序列号为 %1$d 的用户。</string>
+    <string name="no_secondary_users_available">没有可用的次要用户。</string>
+
+    <!-- 关联 ID 管理 -->
+    <string name="manage_affiliation_ids">管理关联 ID</string>
+    <string name="enter_affiliation_id">输入关联 ID</string>
+    <string name="affiliation_id_empty_error">关联 ID 不能为空</string>
+    <string name="require_affiliated_user">需要用户关联</string>
+
+    <!-- 阻止卸载 -->
+    <string name="block_uninstallation_title">阻止卸载</string>
+    <string name="block_uninstallation_by_pkg">按包名阻止卸载</string>
+    <string name="block_uninstallation_list">阻止卸载列表</string>
+    <string name="uninstallation_blocked">%s 卸载已被阻止。</string>
+    <string name="uninstallation_allowed">%s 卸载已被允许。</string>
+    <string name="block_uninstallation_failed_invalid_pkgname">无法更新无效包名的阻止卸载策略。</string>
+    <string name="block">阻止</string>
+    <string name="unblock">解除阻止</string>
+    <string name="close">关闭</string>
+
+    <!-- 系统更新策略 -->
+    <string name="system_update_management">系统更新</string>
+    <string name="system_update_policy">管理系统更新策略</string>
+    <string name="system_update_policy_automatic">自动立即安装</string>
+    <string name="system_update_policy_Windowed">在维护窗口内安装</string>
+    <string name="system_update_policy_postpone">推迟</string>
+    <string name="system_update_policy_none">无</string>
+    <string name="current_system_update_policy">当前系统更新策略：</string>
+    <string name="system_update_policy_window_start_label">维护窗口开始：</string>
+    <string name="system_update_policy_window_end_label">维护窗口结束：</string>
+    <string name="system_update_policy_set_policy">设置新策略</string>
+    <string name="system_update_policy_window_freeze_period_label">冻结期：</string>
+    <string name="system_update_policy_add_freeze_period">添加新周期</string>
+    <string name="system_update_policy_pick_start_free_period_title">选择冻结期开始时间</string>
+    <string name="system_update_policy_pick_end_free_period_title">选择冻结期结束时间</string>
+
+    <!-- 待处理更新信息检查 -->
+    <string name="system_update_pending">检查待处理系统更新</string>
+    <string name="update_info_no_update_toast">没有可用的系统更新。</string>
+    <string name="update_info_title">待处理更新信息</string>
+    <string name="update_info_received">更新于 %1$s 收到。安全补丁：%2$s。</string>
+    <string name="update_info_security_false">false</string>
+    <string name="update_info_security_true">true</string>
+    <string name="update_info_security_unknown">unknown</string>
+
+    <!-- 网络设置 -->
+    <string name="networking_management_title">网络设置</string>
+    <string name="set_always_on_vpn">设置始终开启的 VPN</string>
+    <string name="set_get_preferential_network_service_status">优先网络服务状态</string>
+    <string name="enterprise_slice">企业切片</string>
+    <string name="enterprise_slice_1">企业切片 1</string>
+    <string name="enterprise_slice_2">企业切片 2</string>
+    <string name="enterprise_slice_3">企业切片 3</string>
+    <string name="enterprise_slice_4">企业切片 4</string>
+    <string name="enterprise_slice_5">企业切片 5</string>
+    <string name="allow_fallback_to_default">允许回退到默认连接</string>
+    <string name="slice_enable">启用</string>
+    <string name="included_apps">包含的应用</string>
+    <string name="excluded_apps">排除的应用</string>
+    <string name="submit">提交</string>
+    <string name="submit_title">提交标题</string>
+    <string name="set_global_http_proxy">设置全局 HTTP 代理</string>
+    <string name="clear_global_http_proxy">清除全局 HTTP 代理</string>
+    <string name="networking_proxy_host">主机</string>
+    <string name="networking_proxy_host_hint">输入主机</string>
+    <string name="networking_proxy_port">端口</string>
+    <string name="networking_proxy_port_hint">输入端口</string>
+    <string name="no_host">未指定主机。</string>
+    <string name="no_port">未指定端口。</string>
+    <string name="port_out_of_range">端口超出范围。</string>
+    <string name="set_global_private_dns">设置私有 DNS 模式</string>
+    <string name="current_private_dns_mode">当前模式</string>
+    <string name="private_dns_mode_off">关闭</string>
+    <string name="private_dns_mode_automatic">自动</string>
+    <string name="private_dns_mode_specific_host">指定主机</string>
+    <string name="private_dns_mode_unknown">未知</string>
+    <string name="private_dns_mode_apply">设置</string>
+    <string name="setting_private_dns_succeess">成功设置私有 DNS</string>
+    <string name="setting_private_dns_failure">设置私有 DNS 失败：%s</string>
+
+    <!-- 数据使用情况 -->
+    <string name="data_usage">数据使用情况</string>
+    <string name="network_stats">网络数据使用统计</string>
+    <string-array name="network_stats_queries_array">
+        <item>选择查询类型</item>
+        <item>查询设备摘要</item>
+        <item>查询用户摘要</item>
+        <item>查询应用摘要</item>
+        <item>查询应用历史记录</item>
+    </string-array>
+    <string name="network_stats_choose_query_label">选择查询类型：</string>
+    <string name="network_stats_start_date_label">开始日期（包括）：</string>
+    <string name="network_stats_end_date_label">结束日期（不包括）：</string>
+    <string name="network_stats_device_summary_explanation">
+    下面显示的是在指定时间段内，设备上所有用户的网络数据使用情况。
+</string>
+    <string name="network_stats_device_summary">设备已接收 %1$s，共 %2$d 个数据包，并发送了 %3$s，共 %4$d 个数据包。</string>
+    <string name="network_stats_profile_summary_explanation">
+    下面显示的是在指定时间段内，受管配置文件的网络数据使用摘要。\n
+</string>
+    <string name="network_stats_profile_summary">配置文件已接收 %1$s，共 %2$d 个数据包，并发送了 %3$s，共 %4$d 个数据包。</string>
+    <string name="network_stats_error_title">查询网络统计信息时出错</string>
+    <string name="network_stats_result">查询结果</string>
+    <string name="network_stats_uid_removed">已移除的应用</string>
+    <string name="network_stats_uid_tethering">共享热点</string>
+    <string name="network_stats_uid_system">Android 系统</string>
+    <string name="network_stats_bucket_usage">已接收 %1$s，共 %2$d 个数据包，并发送了 %3$s，共 %4$d 个数据包。</string>
+    <string name="network_stats_foreground_state">状态：前台</string>
+    <string name="network_stats_default_state">状态：默认（后台）</string>
+    <string name="network_stats_combined_state">状态：前台和后台组合</string>
+    <string name="network_stats_uid">UID = %1$d</string>
+    <string name="network_stats_items">%1$d 项</string>
+    <string name="network_stats_security_error_msg">
+    要查看这些数据，请在设置 > 安全性 > 具有使用访问权限的应用中启用 Test DPC。
+</string>
+
+    <!-- 权限策略 -->
+    <string name="permission_management">权限管理</string>
+    <string name="set_default_permission_policy">获取/设置默认权限策略</string>
+    <string name="permission_policy_prompt">提示</string>
+    <string name="permission_policy_auto_accept">自动接受</string>
+    <string name="permission_policy_auto_deny">自动拒绝</string>
+    <string name="permission_allow">允许</string>
+    <string name="permission_default">由用户决定</string>
+    <string name="permission_deny">拒绝</string>
+    <string name="manage_app_permissions">管理应用权限</string>
+    <string name="app_permissions_empty">此应用没有权限可显示。</string>
+
+    <!-- 锁屏功能 -->
+    <string name="keyguard_features">锁屏功能</string>
+    <string name="keyguard_disable_secure_camera">禁用安全相机</string>
+    <string name="keyguard_disable_secure_notifications">禁用安全通知</string>
+    <string name="keyguard_disable_unredacted_notifications">禁用未编辑的通知</string>
+    <string name="keyguard_disable_trust_agents">禁用信任代理</string>
+    <string name="keyguard_disable_face">禁用人脸解锁</string>
+    <string name="keyguard_disable_iris">禁用虹膜解锁</string>
+    <string name="keyguard_disable_fingerprint">禁用指纹解锁</string>
+    <string name="keyguard_disable_remote_input">禁用安全锁屏屏幕上的文本输入</string>
+    <string name="keyguard_disable_shortcuts">禁用快捷方式</string>
+    <string name="keyguard_disable_widgets_all">禁用小部件</string>
+    <string name="cannot_disable_shortcuts_on_work_profile">不能禁用工作配置文件中的快捷方式。请切换到个人配置文件选项卡。</string>
+
+    <!-- 信任代理功能 -->
+    <string name="trust_agent_features">信任代理功能</string>
+    <string name="set_trust_agent_config">设置信任代理配置</string>
+
+    <!-- 设置时间和时区 -->
+    <string name="set_time_manage">设置时间和时区</string>
+    <string name="set_time">设置时间（Unix 时间戳，以毫秒为单位）</string>
+    <string name="no_set_time">未指定时间</string>
+    <string name="invalid_set_time">错误的时间</string>
+    <string name="set_time_zone">设置时区</string>
+    <string name="set_time_zone_hint">示例："America/New_York"、"America/Los_Angeles"</string>
+    <string name="no_timezone">未指定时区</string>
+    <string name="invalid_timezone">时区 ID 无效</string>
+
+
+    <!-- 设置个人资料名称 -->
+    <string name="set_profile_name">设置个人资料名称</string>
+    <string name="no_profile_name">缺少个人资料名称</string>
+
+    <!-- 设置系统设置 -->
+    <string name="set_system_setting">设置系统设置</string>
+    <string name="auto_brightness">自动亮度</string>
+    <string name="set_screen_brightness">设置屏幕亮度</string>
+    <string name="set_screen_brightness_hint">0 到 255 之间</string>
+    <string name="no_screen_brightness">未指定屏幕亮度值</string>
+    <string name="invalid_screen_brightness">屏幕亮度值无效</string>
+    <string name="set_screen_off_timeout">设置屏幕关闭超时（秒）</string>
+    <string name="set_screen_off_timeout_hint">以秒为单位</string>
+    <string name="no_screen_off_timeout">未指定屏幕关闭超时</string>
+    <string name="invalid_screen_off_timeout">屏幕关闭超时无效</string>
+
+    <!-- 屏幕锁定策略 -->
+    <string name="lock_category">锁屏</string>
+    <string name="lock_screen_policy">锁屏限制</string>
+    <string name="maximum_lock_time_category">最大时间到屏幕锁定</string>
+    <string name="maximum_lock_time_seconds">最大时间到屏幕锁定（秒）</string>
+    <string name="maximum_lock_time_all_admins">所有/其他管理员设置的最大时间</string>
+    <string name="strong_auth_timeout_category">需要再次进行强认证的时间间隔</string>
+    <string name="strong_auth_timeout_seconds">强认证超时（秒）</string>
+    <string name="maximum_password_fails">本地擦除的最大密码失败次数</string>
+    <string name="maximum_password_fails_all_admins">所有/其他管理员设置的最大失败次数</string>
+    <string name="not_valid_input">更新失败：输入无效</string>
+    <string name="lock_screen_message">锁屏消息</string>
+
+    <!-- 密码策略 -->
+    <string name="password_constraints">密码约束</string>
+    <string name="minimum_password_quality">最小密码质量</string>
+    <string name="password_quality_unspecified">未指定</string>
+    <string name="password_quality_something">任意</string>
+    <string name="password_quality_numeric">数字</string>
+    <string name="password_quality_numeric_complex">复杂数字</string>
+    <string name="password_quality_alphabetic">字母</string>
+    <string name="password_quality_alphanumeric">字母数字</string>
+    <string name="password_quality_complex">复杂</string>
+    <string name="password_min_length">最小密码长度</string>
+    <string name="password_min_letters">最小字母数量</string>
+    <string name="password_min_numeric">最小小写字母数量</string>
+    <string name="password_min_lowercase">最小大写字母数量</string>
+    <string name="password_min_uppercase">最小符号数量</string>
+    <string name="password_min_symbols">最小非字母数量</string>
+    <string name="password_min_nonletter">最小非字母数量</string>
+    <string name="password_not_compliant_title">密码不符合要求</string>
+    <string name="separate_challenge_required_title">需要单独的工作挑战</string>
+    <string name="set_new_password_notification_content">点击设置新的锁屏密码</string>
+
+    <string name="password_expiration">密码过期</string>
+    <string name="password_expiration_seconds">密码过期（秒）</string>
+    <string name="password_expiration_aggregate">所有/其他管理员设置的过期时间</string>
+    <string name="password_expired_title">密码已过期</string>
+    <string name="password_expired_by_self">根据 TestDPC 设置的策略。</string>
+    <string name="password_expired_by_others">根据其他管理员设置的策略。</string>
+    <string name="password_history_length">密码历史长度</string>
+
+    <plurals name="password_failed_attempts_title">
+        <item quantity="one">密码输入错误 %d 次</item>
+        <item quantity="other">密码输入错误 %d 次</item>
+    </plurals>
+    <plurals name="password_failed_attempts_content">
+        <item quantity="one">设置在 %d 次尝试后擦除。</item>
+        <item quantity="other">设置在 %d 次尝试后擦除。</item>
+    </plurals>
+    <string name="password_failed_no_limit_set">未设置密码失败尝试次数限制。</string>
+
+    <string name="password_compliant_title">当前密码符合要求</string>
+    <string name="password_compliant_profile_summary">个人：%1$s（设备要求：%2$s），工作：%3$s</string>
+    <string name="password_compliant_summary">符合要求 %1$s</string>
+
+    <!-- 密码复杂度 -->
+    <string name="password_complexity_title">密码复杂度</string>
+    <string name="password_complexity_none">无</string>
+    <string name="password_complexity_low">低</string>
+    <string name="password_complexity_medium">中等</string>
+    <string name="password_complexity_high">高</string>
+    <string name="password_complexity_profile_summary">个人：%1$s，工作：%2$s</string>
+    <string name="required_password_complexity_title">所需密码复杂度</string>
+
+    <string name="separate_challenge_title">单独挑战</string>
+    <string name="separate_challenge_summary">单独挑战已启用：%s</string>
+
+    <!-- 设置新密码 -->
+    <string name="reset_password">重置密码</string>
+    <string name="new_password">新密码</string>
+    <string name="require_password_entry">下次解锁时要求使用最强可用的身份验证类型</string>
+    <string name="dont_require_password_on_boot">将来启动用户时不需密码</string>
+    <string name="password_reset_success">密码已重置</string>
+    <string name="password_reset_failed">密码重置失败</string>
+    <string name="do_not_allow_other_admins_change_password">不允许其他管理员更改密码，直到用户输入密码为止。</string>
+
+    <!-- 管理设置 -->
+    <string name="settings_management_title">设置管理</string>
+    <string name="stay_on_while_plugged_in">插入电源时保持设备开启</string>
+    <string name="install_non_market_apps">允许从未知来源安装</string>
+    <string name="set_location_enabled">启用位置服务</string>
+    <string name="set_location_mode">设置位置模式（已弃用的位置服务版本）</string>
+
+    <!-- 设置支持消息 -->
+    <string name="support_messages">支持消息</string>
+    <string name="set_short_support_message">设置短支持消息</string>
+    <string name="set_long_support_message">设置长支持消息</string>
+    <string name="set_message">设置消息</string>
+    <string name="clear_message">清除消息</string>
+    <string name="set_default_message">设置默认消息</string>
+    <string name="default_short_message">此操作已被管理员禁用。请联系 someone@example.com 获取支持。</string>
+    <string name="default_long_message">
+    此配置文件或设备由 TestDPC 管理。您可以联系技术支持：
+    \n\n
+    美洲：+1 555-0100\n\n
+    亚太地区：+1 555-0100\n\n
+    欧洲：+1 555-0100\n\n
+    邮件：someone@example.com</string>
+
+    <!-- 组织信息 -->
+    <string name="organization_info">组织信息</string>
+    <string name="set_organization_color">设置组织颜色</string>
+    <string name="set_organization_name">设置组织名称</string>
+
+    <!-- 颜色选择器对话框使用的字符串 -->
+    <string name="color_picker_done">完成</string>
+    <string name="pick_color">选择颜色</string>
+    <string name="color_red_label">R</string>
+    <string name="color_green_label">G</string>
+    <string name="color_blue_label">B</string>
+    <string name="enter_color_value">输入值：</string>
+    <string name="update_color">更新</string>
+    <string name="not_valid_color">无效的颜色</string>
+    <string name="color_format">#AARRGGBB</string>
+    <string name="unable_disable_keyguard">无法禁用锁屏</string>
+    <string name="unable_enable_keyguard">无法启用锁屏</string>
+
+    <!-- 转移所有权 -->
+    <string name="transfer_ownership">转移所有权</string>
+    <string name="transfer_ownership_to_component">将所有权转移给组件</string>
+    <string name="transfer">转移</string>
+    <string name="transfer_ownership_component_to_transfer_to">要转移给的组件：</string>
+    <string name="transfer_ownership_example_package_name_example_component">example.package.name/example.class.name</string>
+    <string name="transfer_ownership_suitable_components_found_on_this_deivce">此设备上找到合适的组件：</string>
+    <string name="transfer_ownership_result_of_the_transfer_success_or_exception_log">转移结果（成功或异常日志）：</string>
+    <string name="transfer_ownership_invalid_target_format">目标组件名称格式无效。期望 "example.package.name/example.class.name"。</string>
+    <string name="transfer_ownership_profile_owner_changed_title">配置文件所有者已更改</string>
+    <string name="transfer_ownership_device_owner_changed_title">设备所有者已更改</string>
+    <string name="transfer_ownership_complete_title">所有权转移已完成</string>
+    <string name="transfer_ownership_complete_message">新的所有者是 %1$s</string>
+    <string name="transfer_ownership_affiliated_complete_title">关联配置文件的所有权转移已完成</string>
+    <string name="transfer_ownership_affiliated_complete_message">已转移的用户是 %1$s</string>
+
+    <string name="request_to_set_new_password">请求用户设置新密码</string>
+    <string name="request_to_set_new_password_with_complexity">设置新密码并指定最小复杂度</string>
+    <string name="set_required_password_complexity">设置所需的密码复杂度</string>
+    <string name="set_required_password_complexity_on_parent">在父级设置所需的密码复杂度</string>
+    <string name="request_to_set_profile_parent_new_password">请求用户设置配置文件父级的新密码</string>
+    <string name="request_to_set_profile_parent_new_password_device_requirement">请求用户设置配置文件父级的新密码（仅设备要求）</string>
+
+    <!-- 设备所有者与配置文件所有者的通信（COMP 和 DO<->PO 的次要用户） -->
+    <string name="bind_device_admin_category_title">绑定到配置文件所有者</string>
+    <string name="bind_device_admin_policy_title">绑定到配置文件所有者服务</string>
+    <string name="bind_to_profile_owner_failed">绑定到配置文件所有者失败。用户是否正在运行/解锁？</string>
+    <string name="po_user_status">配置文件所有者用户状态</string>
+    <string name="managed_profile_not_running">托管配置文件未运行</string>
+    <string name="managed_profile_running_but_locked">托管配置文件正在运行但已锁定</string>
+    <string name="managed_profile_not_running_or_unlocked">托管配置文件未运行或已锁定</string>
+    <string name="managed_profile_unlocked">托管配置文件已解锁</string>
+    <string name="po_user_is_unlocked">序列号为 %1$d 的配置文件所有者用户已解锁</string>
+    <string name="po_user_is_secondary">配置文件所有者属于次要用户</string>
+    <string name="require_one_po_to_bind">需要恰好一个配置文件所有者可以绑定</string>
+    <string name="hide_profile_owner_launcher_icon">隐藏配置文件所有者图标</string>
+    <string name="install_ca_cert_in_po_user">在配置文件所有者用户中安装 CA 证书</string>
+
+    <!-- 使用令牌重置密码对话框使用的字符串 -->
+    <string name="reset_password_token_none">(无)</string>
+    <string name="reset_password_token_active">有效</string>
+    <string name="reset_password_token_inactive">无效</string>
+    <string name="activate_reset_password_token_cancelled">取消激活密码重置令牌</string>
+    <string name="set_password_reset_token_failed">设置密码重置令牌失败</string>
+    <string name="clear_password_reset_token_failed">删除密码重置令牌失败</string>
+    <string name="reset_password_with_token_failed">使用令牌重置密码失败</string>
+    <string name="reset_password_with_token_succeed">"密码已成功更改为：'%1$s'</string>
+    <string name="reset_password_fragment_set_new_token">设置新令牌</string>
+    <string name="reset_password_fragment_status">状态：</string>
+    <string name="reset_password_fragment_delete_token">删除令牌</string>
+    <string name="reset_password_fragment_activate">激活</string>
+    <string name="reset_password_fragment_token_label">令牌：</string>
+    <string name="reset_password_fragment_reset_password_section">重置密码</string>
+    <string name="reset_password_fragment_new_password_label">新密码：</string>
+    <string name="reset_password_fragment_set_password">设置密码</string>
+    <string name="reset_password_no_token">无令牌</string>
+    <string name="reset_password_foreground_notification">TestDPC 重置密码服务正在运行</string>
+    <string name="reset_password_notification">滑动此通知以重置密码</string>
+
+    <string name="package_changed_notification_title">检测到软件包更改</string>
+    <string name="package_added_notification_text">%1$s 已添加</string>
+    <string name="package_removed_notification_text">%1$s 已移除</string>
+
+    <string name="cross_profile_section">跨配置文件</string>
+    <string name="cross_profile_apps_api">演示 CrossProfileApps API</string>
+    <string name="cross_profile_apps_api_explanation">通过使用 CrossProfileApps API，应用程序可以在另一个配置文件中启动实例，前提是该应用程序也在该配置文件中安装。</string>
+    <string name="cross_profile_apps_available">TestDPC 在另一个配置文件中已安装，点击图标以在该配置文件中启动它。</string>
+    <string name="cross_profile_apps_not_available">TestDPC 在另一个配置文件中未安装，请尝试安装它并返回这里。</string>
+
+    <string name="cross_profile_apps_allowlist">允许的跨配置文件应用程序</string>
+    <string name="cross_profile_apps_enabled_title">已启用的跨配置文件应用程序</string>
+    <string name="cross_profile_apps_no_allowlisted_apps">没有允许的应用程序</string>
+    <string name="cross_profile_apps_example_text">example.package.name</string>
+    <string name="cross_profile_apps_add_button_text">添加应用</string>
+    <string name="cross_profile_apps_remove_button_text">移除应用</string>
+    <string name="cross_profile_apps_reset_button_text">重置跨配置文件应用程序</string>
+
+    <string name="install_update">从文件安装更新</string>
+    <string name="install_update_prompt">这将尝试安装 TestDPC 文件目录中的更新文件 ota.zip（如果文件存在，例如您通过 adb 推送）。是否继续？</string>
+    <string name="install_update_prompt_yes">是</string>
+    <string name="install_update_prompt_no">否</string>
+
+    <!-- DPC 登录屏幕和 DPC 策略合规性屏幕使用的字符串 -->
+    <string name="dpc_login_title">选择预配方法</string>
+    <string name="dpc_login_explanation">选择预配方法：</string>
+    <string name="dpc_login_do">完全托管设备</string>
+    <string name="dpc_login_po">托管配置文件</string>
+    <string name="dpc_login_comp">托管配置文件上的完全托管设备</string>
+    <string name="dpc_policy_compliance_title">DPC 策略合规性</string>
+    <string name="dpc_policy_compliance_explanation">TestDPC 设置已完成。</string>
+
+    <string name="vpn_exempted_packages">豁免的软件包</string>
+    <string name="vpn_lockdown">锁定</string>
+
+    <!-- 该字符串是询问用户如何设置设备的屏幕标题。
+
+         如果用户使用托管账户设置设备，且我们认为用户可能想要设置托管配置文件而不是托管设备，则会显示此屏幕。[字符限制=100]-->
+    <string name="selector_title">您将如何使用这台手机？</string>
+    <!-- 该字符串是设置托管设备屏幕的副标题。
+
+         如果用户使用托管账户设置设备，且我们认为用户可能想要设置托管配置文件而不是托管设备，则会显示此屏幕。[字符限制=100]-->
+    <string name="do_selection_subtitle">工作专用</string>
+    <!-- 该字符串是设置托管设备屏幕的详细文本，向用户提供有关在此模式下设备行为的更多信息。
+
+         文本项目符号是列表的一部分。它们描述了用户在设置新设备时可以选择的一个选项，即让其组织管理整个设备。这意味着设备上的数据不会私密（IT管理员可以看到），并且可以随时擦除。[字符限制=200]-->
+    <string name="do_selection_detailed_text">
+    <li>这台手机将由您的IT管理员管理</li>\n\n
+    <li>您的数据不会私密，并且可以随时擦除</li>
+</string>
+    <!-- 该字符串是用于设置托管设备的按钮文本。
+
+         如果用户使用托管账户设置设备，且我们认为用户可能想要设置托管配置文件而不是托管设备，则会显示此屏幕。[字符限制=50]-->
+    <string name="do_selection_button_text">仅用于工作</string>
+
+    <!-- 该字符串是设置托管配置文件屏幕的副标题。
+
+         如果用户使用托管账户设置设备，且我们认为用户可能想要设置托管配置文件而不是托管设备，则会显示此屏幕。[字符限制=100]-->
+    <string name="po_selection_subtitle">工作和个人</string>
+    <!-- 该字符串是设置托管配置文件屏幕的详细文本，向用户提供有关在此模式下设备行为的更多信息。
+
+         如果用户使用托管账户设置设备，且我们认为用户可能想要设置托管配置文件而不是托管设备，则会显示此屏幕。[字符限制=200]-->
+    <string name="po_selection_detailed_text">
+    <li>您的工作数据将保存在单独的配置文件中</li>\n\n
+    <li>您的个人数据保持私密</li>
+</string>
+    <!-- 该字符串是用于设置托管配置文件的按钮文本。
+
+         如果用户使用托管账户设置设备，且我们认为用户可能想要设置托管配置文件而不是托管设备，则会显示此屏幕。[字符限制=50]-->
+    <string name="po_selection_button_text">用于工作和个人</string>
+
+    <!-- 该字符串是在模式选择屏幕上显示两个选项之间的分隔文本。
+
+         如果用户使用托管账户设置设备，且我们认为用户可能想要设置托管配置文件而不是托管设备，则会显示此屏幕。[字符限制=100]-->
+    <string name="selection_divider_text">或</string>
+
+    <string name="set_organization_id">设置组织标识符</string>
+    <string name="organization_id_empty">组织标识符不能为空。</string>
+    <string name="enrollment_specific_id">注册特定ID</string>
+    <string name="enrollment_specific_id_empty">不可用</string>
+
+    <!-- 用于吐司消息，告知可能不安全的操作现在可能是安全的（反之亦然） -->
+    <string name="safety_operations_change_message">影响<xliff:g id="reason">%1$s</xliff:g>的操作现在<xliff:g id="state">%2$s</xliff:g></string>
+
+    <string name="unsafe_operation_reason_driving_distraction">驾驶分心</string>
+    <string name="unsafe_operation_reason_driving_undefined">未定义</string>
+    <string name="safe">安全</string>
+    <string name="unsafe">不安全</string>
+
+    <!-- 在通过 android.settings.SHOW_WORK_POLICY_INFO 启动的活动中使用的字符串 -->
+    <string name="work_policy_info_name">TestDPC 工作策略信息</string>
+    <string name="work_policy_info_description">这是 TestDPC 的工作策略信息。</string>
+
+    <string name="mte_section">MTE 设置</string>
+    <string name="mte_policy">设置 MTE 策略</string>
+    <string-array name="mte_policy_options">
+        <!-- 重要：必须与 DevicePolicyManager 中的 MtePolicy 项顺序匹配。 -->
+        <item>不强制</item>
+        <item>强制开启</item>
+        <item>强制关闭</item>
+    </string-array>
+
+    <!-- 托管订阅策略的字符串 -->
+    <string name="work_telephony_title">工作配置文件电话</string>
+    <string name="managed_subscriptions_title">设置托管订阅策略</string>
+    <string name="personal_subscriptions_label">所有 SIM 卡均为个人使用</string>
+    <string name="work_subscriptions_label">所有 SIM 卡均为工作使用</string>
+
+    <!-- 凭据管理器策略的字符串 -->
+    <string name="credential_manager_title">凭据管理器</string>
+    <string name="credential_manager_set_allowlist">设置凭据提供程序白名单</string>
+    <string name="credential_manager_set_allowlist_and_system">设置凭据提供程序白名单和系统</string>
+    <string name="credential_manager_set_blocklist">设置凭据提供程序黑名单</string>
+    <string name="credential_manager_clear_policy">清除策略</string>
+    <string name="credential_manager_policy_applied_toast">策略已应用</string>
+    <string name="credential_manager_policy_title">输入凭据提供程序的包名</string>
+
+</resources>
