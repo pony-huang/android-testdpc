@@ -1,0 +1,6 @@
+[submodule "setupdesign"]
+	path = setupdesign
+	url = https://android.googlesource.com/platform/external/setupdesign
+[submodule "setupcompat"]
+	path = setupcompat
+	url = https://android.googlesource.com/platform/external/setupcompat

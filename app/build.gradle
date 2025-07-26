@@ -1,0 +1,96 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+}
+
+android {
+    namespace 'com.afwsamples.testdpc'
+    compileSdk 35
+    compileSdkVersion 35
+    defaultConfig {
+        applicationId "com.afwsamples.testdpc"
+        minSdk 21
+        minSdkVersion 21
+        targetSdk 34
+        targetSdkVersion 34
+        versionCode 9006
+        versionName "9.0.12"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    sourceSets {
+        main {
+            res.srcDirs = ['/src/main/res']
+            aidl.srcDirs = ['/src/main/aidl']    // locate your modA aidl directory
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+        }
+        debug {
+            manifest.srcFile 'src/main/AndroidManifestDebug.xml'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    buildFeatures {
+        compose true
+        aidl true
+    }
+
+    defaultConfig {
+        vectorDrawables.useSupportLibrary = true
+    }
+}
+
+dependencies {
+    implementation project(path: ':setupdesign')
+    implementation project(path: ':setupcompat')
+    implementation libs.androidx.annotation
+    implementation libs.androidx.appcompat
+    implementation libs.androidx.appcompat.resources
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.core
+    implementation libs.androidx.enterprise.feedback
+    implementation libs.androidx.legacy.support.core.ui
+    implementation libs.androidx.legacy.support.v13
+    implementation libs.androidx.lifecycle.common
+    implementation libs.androidx.lifecycle.process
+    implementation libs.androidx.lifecycle.runtime
+    implementation libs.androidx.localbroadcastmanager
+    implementation libs.androidx.preference
+    implementation libs.androidx.recyclerview
+    implementation libs.androidx.collection
+    implementation libs.com.google.material
+    implementation libs.com.google.guava
+    implementation libs.org.bouncycastle.bcpkix
+    implementation libs.org.bouncycastle.bcprov
+
+    debugImplementation libs.androidx.fragment.testing
+    debugImplementation libs.androidx.test.core
+    testImplementation libs.junit
+    testImplementation libs.robolectric
+    testImplementation libs.androidx.test.core
+    testImplementation libs.androidx.test.ext.junit
+    testImplementation libs.androidx.test.espresso.core
+    testImplementation libs.google.truth
+    testImplementation libs.test.parameter.injector
+    testAnnotationProcessor libs.google.auto.service
+    androidTestImplementation libs.androidx.test.core
+    androidTestImplementation libs.androidx.test.ext.junit
+    androidTestImplementation libs.androidx.test.runner
+    androidTestImplementation libs.androidx.test.espresso.core
+    androidTestImplementation libs.androidx.fragment.testing
+    androidTestImplementation libs.google.truth
+    androidTestImplementation libs.robolectric.annotations
+
+}

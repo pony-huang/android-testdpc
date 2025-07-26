@@ -1,0 +1,53 @@
+[versions]
+agp = "8.7.3"
+kotlin = "2.0.0"
+androidx-fragment = "1.5.3"
+core = "1.6.1"
+ext-junit = "1.2.1"
+runner = "1.6.1"
+espresso = "3.6.1"
+robolectric = "4.13"
+test-parameter-injector = "1.18"
+truth = "1.1.3"
+auto-service = "1.0-rc4"
+google-testing-junit = "1.0.0" # Replace with the actual version you need
+
+[libraries]
+androidx-annotation = { group = "androidx.annotation", name = "annotation", version = "1.3.0" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version = "1.6.1" }
+androidx-appcompat-resources = { group = "androidx.appcompat", name = "appcompat-resources", version = "1.6.1" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version = "2.1.3" }
+androidx-core = { group = "androidx.core", name = "core", version = "1.6.0" }
+androidx-enterprise-feedback = { group = "androidx.enterprise", name = "enterprise-feedback", version = "1.1.0" }
+androidx-legacy-support-core-ui = { group = "androidx.legacy", name = "legacy-support-core-ui", version = "1.0.0" }
+androidx-legacy-support-v13 = { group = "androidx.legacy", name = "legacy-support-v13", version = "1.0.0" }
+androidx-lifecycle-common = { group = "androidx.lifecycle", name = "lifecycle-common", version = "2.5.1" }
+androidx-lifecycle-process = { group = "androidx.lifecycle", name = "lifecycle-process", version = "2.5.1" }
+androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime", version = "2.5.1" }
+androidx-localbroadcastmanager = { group = "androidx.localbroadcastmanager", name = "localbroadcastmanager", version = "1.1.0" }
+androidx-preference = { group = "androidx.preference", name = "preference", version = "1.1.0" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version = "1.2.0" }
+androidx-collection = { group = "androidx.collection", name = "collection", version = "1.2.0" }
+com-google-material = { group = "com.google.android.material", name = "material", version = "1.5.0" }
+com-google-guava = { group = "com.google.guava", name = "guava", version = "31.1-android" }
+org-bouncycastle-bcpkix = { group = "org.bouncycastle", name = "bcpkix-jdk15on", version = "1.70" }
+org-bouncycastle-bcprov = { group = "org.bouncycastle", name = "bcprov-jdk15on", version = "1.70" }
+
+androidx-fragment-testing = { module = "androidx.fragment:fragment-testing", version.ref = "androidx-fragment" }
+androidx-test-core = { module = "androidx.test:core", version.ref = "core" }
+junit = { module = "junit:junit", version = "4.12" }
+robolectric = { module = "org.robolectric:robolectric", version.ref = "robolectric" }
+androidx-test-ext-junit = { module = "androidx.test.ext:junit", version.ref = "ext-junit" }
+androidx-test-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espresso" }
+google-truth = { module = "com.google.truth:truth", version.ref = "truth" }
+google-auto-service = { module = "com.google.auto.service:auto-service", version.ref = "auto-service" }
+androidx-test-runner = { module = "androidx.test:runner", version.ref = "runner" }
+robolectric-annotations = { module = "org.robolectric:annotations", version.ref = "robolectric"}
+google-testing-junit = { module = "com.google.testing:junit", version.ref = "google-testing-junit" } # Add this line
+test-parameter-injector = { module = "com.google.testparameterinjector:test-parameter-injector", version.ref = "test-parameter-injector" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+

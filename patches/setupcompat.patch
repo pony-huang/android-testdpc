@@ -1,0 +1,77 @@
+Subject: [PATCH] Update build configuration and dependencies
+---
+Index: main/java/com/google/android/setupcompat/logging/SetupMetric.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main/java/com/google/android/setupcompat/logging/SetupMetric.java b/main/java/com/google/android/setupcompat/logging/SetupMetric.java
+--- a/main/java/com/google/android/setupcompat/logging/SetupMetric.java	(revision 2ce41c8f4de550b5186233cec0a722dd0ffd9a84)
++++ b/main/java/com/google/android/setupcompat/logging/SetupMetric.java	(date 1753548244628)
+@@ -194,7 +194,7 @@
+   }
+ 
+   public static final Creator<SetupMetric> CREATOR =
+-      new Creator<>() {
++      new Creator<SetupMetric>() {
+         @Override
+         public SetupMetric createFromParcel(@NonNull Parcel in) {
+           return new SetupMetric(in.readInt(),
+Index: main/java/com/google/android/setupcompat/logging/ScreenKey.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main/java/com/google/android/setupcompat/logging/ScreenKey.java b/main/java/com/google/android/setupcompat/logging/ScreenKey.java
+--- a/main/java/com/google/android/setupcompat/logging/ScreenKey.java	(revision 2ce41c8f4de550b5186233cec0a722dd0ffd9a84)
++++ b/main/java/com/google/android/setupcompat/logging/ScreenKey.java	(date 1753548239084)
+@@ -101,7 +101,7 @@
+   }
+ 
+   public static final Creator<ScreenKey> CREATOR =
+-      new Creator<>() {
++      new Creator<ScreenKey>() {
+         @Override
+         public ScreenKey createFromParcel(Parcel in) {
+           return new ScreenKey(in.readString(), in.readString());
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	(revision 2ce41c8f4de550b5186233cec0a722dd0ffd9a84)
++++ b/build.gradle	(date 1753548228627)
+@@ -17,12 +17,12 @@
+ 
+ android {
+     // Not specifying compileSdkVersion here so clients can specify it; must be at least Q
+-
++    compileSdkVersion 34
++    namespace 'com.google.android.setupcompat'
+     defaultConfig {
+-        minSdkVersion 19
+-        targetSdkVersion 28
++        minSdkVersion 21
++        targetSdkVersion 34
+     }
+-
+     buildTypes {
+         release {
+             minifyEnabled false
+@@ -41,8 +41,15 @@
+         sourceCompatibility JavaVersion.VERSION_1_8
+         targetCompatibility JavaVersion.VERSION_1_8
+     }
++    buildFeatures {
++        compose true
++        aidl true
++    }
+ }
+ 
+ dependencies {
+     implementation "androidx.annotation:annotation:1.0.0"
++    implementation 'com.google.errorprone:error_prone_annotations:2.36.0'
++    implementation 'com.google.android.material:material:1.5.0'
++    implementation "androidx.window:window:1.2.0"
+ }

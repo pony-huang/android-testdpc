@@ -1,0 +1,44 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.kotlin.compose) apply false
+}
+
+if (project.hasProperty('applyPatches') && project.applyPatches.toBoolean()) {
+    def applyPatchSafely = { String directory, String patchPath, String markerName ->
+        try {
+            def patchFile = file("${rootDir}/${patchPath}")
+            def markerFile = file("${rootDir}/.gradle/${markerName}.applied")
+
+            if (markerFile.exists()) {
+                println "Patch already applied: ${patchPath}, skipping."
+                return
+            }
+
+            if (patchFile.exists() && patchFile.length() > 0) {
+                println "Applying patch: ${patchPath} to ${directory}"
+                def result = exec {
+                    workingDir rootDir
+                    commandLine 'git', 'apply', "--directory=${directory}", patchPath
+                    ignoreExitValue = true
+                }
+
+                if (result.exitValue == 0) {
+                    println "Patch applied successfully: ${patchPath}"
+                    markerFile.text = "applied"
+                } else {
+                    println "Patch failed to apply: ${patchPath}, git apply exited with ${result.exitValue}"
+                }
+            } else {
+                println "Patch file not found or empty: ${patchPath}"
+            }
+        } catch (Exception e) {
+            println "Failed to apply patch ${patchPath}: ${e.message}"
+        }
+    }
+
+    applyPatchSafely('setupdesign', 'patches/setupdesign.patch', 'setupdesign_patch')
+    applyPatchSafely('setupcompat', 'patches/setupcompat.patch', 'setupcompat_patch')
+}
+

@@ -1,0 +1,66 @@
+Subject: [PATCH] Update build configuration and dependencies
+---
+Index: build.gradle
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/build.gradle b/build.gradle
+--- a/build.gradle	(revision 4634dac90e3c09a78c2fcdfcb16ab9cb16265527)
++++ b/build.gradle	(date 1753548192367)
+@@ -19,11 +19,11 @@
+ apply plugin: 'com.android.library'
+ 
+ android {
+-    compileSdkVersion 28
+-
++    compileSdkVersion 34
++    namespace 'com.google.android.setupdesign'
+     defaultConfig {
+         minSdkVersion 14
+-        targetSdkVersion 28
++        targetSdkVersion 34
+     }
+ 
+     buildTypes {
+@@ -40,6 +40,12 @@
+             res.srcDirs = ['main/res', 'strings/res']
+         }
+     }
++    buildFeatures {
++        compose true
++    }
++    defaultConfig {
++        vectorDrawables.useSupportLibrary = true
++    }
+ }
+ 
+ dependencies {
+@@ -47,4 +53,9 @@
+     implementation "androidx.annotation:annotation:1.0.0"
+     implementation "androidx.recyclerview:recyclerview:1.0.0"
+     implementation 'androidx.appcompat:appcompat:1.0.2'
++    implementation "androidx.core:core-ktx:1.12.0"
++    implementation "androidx.legacy:legacy-support-core-ui:1.0.0"
++    implementation "androidx.window:window:1.2.0"
++    implementation 'com.google.errorprone:error_prone_annotations:2.36.0'
++    implementation 'com.google.android.material:material:1.5.0'
+ }
+Index: main/src/com/google/android/setupdesign/util/DeviceHelper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/main/src/com/google/android/setupdesign/util/DeviceHelper.java b/main/src/com/google/android/setupdesign/util/DeviceHelper.java
+--- a/main/src/com/google/android/setupdesign/util/DeviceHelper.java	(revision 4634dac90e3c09a78c2fcdfcb16ab9cb16265527)
++++ b/main/src/com/google/android/setupdesign/util/DeviceHelper.java	(date 1753548505542)
+@@ -108,8 +108,7 @@
+       }
+     }
+ 
+-    return context.getString(
+-        com.google.android.setupdesign.strings.R.string.sud_default_device_name);
++    return context.getString(com.google.android.setupdesign.R.string.sud_default_device_name);
+   }
+ 
+   private DeviceHelper() {}
