@@ -6,39 +6,80 @@ plugins {
 }
 
 if (project.hasProperty('applyPatches') && project.applyPatches.toBoolean()) {
+    // 闭包：安全地应用单个补丁，并使用独立的标记文件
     def applyPatchSafely = { String directory, String patchPath, String markerName ->
-        try {
-            def patchFile = file("${rootDir}/${patchPath}")
-            def markerFile = file("${rootDir}/.gradle/${markerName}.applied")
+        // 将标记文件放在 .gradle 目录下，这是一个常见的存放构建相关临时文件的地方
+        def markerFile = file("${rootDir}/.gradle/patchMarkers/${markerName}.applied")
 
+        try {
             if (markerFile.exists()) {
-                println "Patch already applied: ${patchPath}, skipping."
+                println "Patch '${patchPath}' already applied (marker file found: ${markerFile.name}). Skipping."
                 return
             }
 
+            def patchFile = file("${rootDir}/${patchPath}")
             if (patchFile.exists() && patchFile.length() > 0) {
-                println "Applying patch: ${patchPath} to ${directory}"
-                def result = exec {
+                println "Attempting to apply patch: ${patchPath} to directory: ${directory}"
+
+                // 步骤 1: 检查补丁是否可以干净地应用
+                // 'git apply --check' 如果补丁已经应用或者有冲突，通常会返回非0值
+                def checkResult = exec {
                     workingDir rootDir
-                    commandLine 'git', 'apply', "--directory=${directory}", patchPath
-                    ignoreExitValue = true
+                    commandLine 'git', 'apply', '--check', "--directory=${directory}", patchPath
+                    ignoreExitValue = true // 我们将手动检查退出码
                 }
 
-                if (result.exitValue == 0) {
-                    println "Patch applied successfully: ${patchPath}"
-                    markerFile.text = "applied"
+                if (checkResult.exitValue == 0) {
+                    // 检查通过，实际应用补丁
+                    println "Patch check successful for '${patchPath}'. Applying..."
+                    def applyResult = exec {
+                        workingDir rootDir
+                        commandLine 'git', 'apply', "--directory=${directory}", patchPath
+                        ignoreExitValue = true // 我们将手动检查退出码
+                    }
+
+                    if (applyResult.exitValue == 0) {
+                        println "Patch applied successfully: ${patchPath}"
+                        // 创建标记文件以指示此补丁已应用
+                        markerFile.getParentFile().mkdirs() // 确保父目录存在
+                        markerFile.text = "applied on ${new Date()}" // 写入一些内容到标记文件
+                    } else {
+                        println "Patch application failed for '${patchPath}'. 'git apply' exited with ${applyResult.exitValue}. This might indicate conflicts."
+                    }
                 } else {
-                    println "Patch failed to apply: ${patchPath}, git apply exited with ${result.exitValue}"
+                    // git apply --check 返回非0值
+                    println "Patch check failed for '${patchPath}' (exit code: ${checkResult.exitValue}). The patch may already be applied or there are conflicts. Skipping actual application."
                 }
             } else {
-                println "Patch file not found or empty: ${patchPath}"
+                println "Patch file not found or empty: ${patchPath}. Cannot apply."
             }
         } catch (Exception e) {
-            println "Failed to apply patch ${patchPath}: ${e.message}"
+            println "An error occurred while trying to apply patch ${patchPath}: ${e.message}"
         }
     }
 
     applyPatchSafely('setupdesign', 'patches/setupdesign.patch', 'setupdesign_patch')
     applyPatchSafely('setupcompat', 'patches/setupcompat.patch', 'setupcompat_patch')
+
+} else {
+    println "Patching is disabled (Gradle property 'applyPatches' is not set to 'true')."
+}
+
+tasks.register('cleanAllPatchMarkers') {
+    group = 'build setup'
+    description = 'Deletes all patch marker files to allow patches to be reapplied on the next build.'
+    doLast {
+        def markersDir = file("${rootDir}/.gradle/patchMarkers")
+        if (markersDir.exists() && markersDir.isDirectory()) {
+            println "Deleting all patch markers in ${markersDir}..."
+            if (markersDir.deleteDir()) { // deleteDir() 会删除目录及其所有内容
+                println "Successfully deleted all patch markers."
+            } else {
+                println "Failed to delete all patch markers from ${markersDir}."
+            }
+        } else {
+            println "Patch markers directory not found: ${markersDir}. Nothing to clean."
+        }
+    }
 }
 
