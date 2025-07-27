@@ -2,55 +2,51 @@ name: Build
 
 on:
   push:
-    paths-ignore:
-      - "CONTRIB"
-      - "LICENSE"
-      - "PRIVACY"
-      - "README.md"
+    branches: [ "feature/gradle_build", "master" ]
   pull_request:
-    branches: [ "master" ]
-  workflow_dispatch:
+    branches: [ "*" ]
 
 jobs:
   build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
 
-      - name: Checkout
+    runs-on: ubuntu-latest
+
+    env:
+      JAVA_VERSION: '17'
+      GRADLE_OPTS: "-Dorg.gradle.daemon=false"
+
+    steps:
+      - name: Checkout project
         uses: actions/checkout@v4
 
-      - name: Setup Java
+      - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
           distribution: 'temurin'
+          java-version: ${{ env.JAVA_VERSION }}
 
-      - name: Setup Bazel
-        uses: bazel-contrib/setup-bazel@0.8.4
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+
+      - name: Cache Gradle files
+        uses: actions/cache@v4
         with:
-          bazelisk-cache: true
-          disk-cache: ${{ github.workflow }}
-          repository-cache: true
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            gradle-${{ runner.os }}-
 
-      - name: Build
-        run: |
-          chmod +x build.sh
-          ./build.sh
+      - name: Build with Gradle
+        run: ./gradlew build --stacktrace
 
-      - name: Test
-        run: bazel test :all
+      - name: Run Tests
+        run: ./gradlew test
 
-      - name: Set environments
-        run: |
-          {
-            echo "commit=$(echo ${{ github.sha }} | cut -c-7)"
-            echo "repo=$(echo ${GITHUB_REPOSITORY#$GITHUB_REPOSITORY_OWNER/})"
-            echo "version=v$(grep -o 'android:versionName="[^"]*"' src/main/AndroidManifest.xml | awk -F'"' '{print $2}')"
-          } >> $GITHUB_ENV
-
-      - name: Upload APK
+      - name: Upload Build Artifacts
+        if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ env.repo }}-${{ env.version }}@${{ env.commit }}
-          path: bazel-bin/*.apk
+          name: app-build
+          path: app/build/outputs/
